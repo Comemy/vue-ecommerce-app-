@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Effect with Cursor</title>
+  <style>
+    #typed-text {
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    /*Cursor ที่กระฒพริบ8*/
+
+    #cursor {
+      font-size: 2em;
+      font-weight: bold;
+      display: inline-block;
+      width: 10px;
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>We Create <span id="typed-text"></span><span id="cursor">|</span></h1>
+
+  <script>
+    const words = ["Awesome Design", "Innovative UI", "Creative Web"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let typingElement = document.getElementById("typed-text");
+
+    function type() {
+      if (charIndex < words[wordIndex].length) {
+        typingElement.innerHTML += words[wordIndex][charIndex];
+        charIndex++;
+        setTimeout(type, 100);
+      } else {
+        setTimeout(erase, 1500);
+      }
+    }
+
+    function erase() {
+      if (charIndex > 0) {
+        typingElement.innerHTML = words[wordIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, 50);
+      } else {
+        wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(type, 750);
+      }
+    }
+
+    type();
+  </script>
+
+</body>
+
+</html>
