@@ -11,7 +11,7 @@ const getAllProducts = async (req, res) => {
   }
 
   catch (error) {
-    return res.status(500).json({ error: error.message })
+    return res.status(500).json('error get products')
   }
 }
 
@@ -22,7 +22,7 @@ const getEachProduct = async (req, res) => {
     return res.json(result)
   }
   catch (error) {
-    return res.status(500).json({ error: error.message })
+    return res.status(500).json('error get each product')
   }
 }
 
@@ -34,7 +34,7 @@ const addProduct = async (req, res) => {
     return res.status(201).json({ message: 'Product Add Success' })
   }
   catch (error) {
-    return res.status(500).json({ error: error.message })
+    return res.status(500).json('Error adding product')
   }
 }
 
@@ -62,8 +62,9 @@ const deleteProduct = async (req, res) => {
     if (result[0].affectedRows === 0) {
       return res.status(201).json({ error: 'Can not find delete Product' })
     }
-    return res.status(201).json({ message: 'Delete Product Success' })
     await db.query('ALTER TABLE products AUTO_INCREMENT = 1')
+    return res.status(201).json({ message: 'Delete Product Success' })
+
   }
   catch (error) {
     return res.status(500).json({ error: error.messages })
