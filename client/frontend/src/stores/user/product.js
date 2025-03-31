@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { defineStore } from 'pinia'
 
-const API_URL = 'http://localhost:5000/products'
+const API_URL = 'https://vue-ecommerce-app-2lu4.onrender.com/products'
 
 export const userProductStore = defineStore('product', {
   state: () => ({
