@@ -23,5 +23,5 @@ app.use('/orders', orderRoutes)
 app.use('/upload', uploadRoutes)
 
 
-app.listen(port, () => console.log(`🚀 Server running on http://localhost:${port}`))
+app.listen(port, () => console.log(`🚀 Server running on:${port}`))
 
