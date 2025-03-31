@@ -6,7 +6,7 @@ const db = mysql.createPool({
   user: process.env.DB_USER || 'root',
   password: process.env.DB_PASS || 'root',
   database: process.env.DB_NAME || 'easy_commerce',
-  port: process.env.DB_PORT,
+  port: Number(process.env.DB_PORT),
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
