@@ -3,7 +3,7 @@ const express = require('express');
 const promise = require('promise')
 const cors = require('cors')
 const db = require('./db')
-const port = process.env.PORT
+const port = process.env.PORT || 5000
 
 
 const app = express()
