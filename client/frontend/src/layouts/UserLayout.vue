@@ -6,7 +6,7 @@ import { RouterLink, useRouter } from 'vue-router'
 import axios from 'axios'
 
 const cartStore = userCartStore()
-const API_URL = 'http://localhost:5000/'
+const API_URL = 'https://vue-ecommerce-app-2lu4.onrender.com/'
 const router = useRouter()
 const isLogged = ref(false)
 const searchText = ref('')

@@ -44,7 +44,8 @@ const deleteProduct = (id) => {
           <div class='w-15 h-auto mx-auto'><img :src="product.imageUrl" class="w-15 h-15"></div>
         </td>
         <td>{{ product.price }}</td>
-        <td>{{ product.remainQuantity }} / {{ product.quantity }}</td>
+
+        <td> {{ product.remainQuantity ?? '-' }} / {{ product.quantity ?? '-' }}</td>
         <td>
           <div
             :class="['w-auto mx-auto rounded-lg text-sm font-bold p-1', product.status === 'open' ? 'bg-lime-400 text-green-900 ' : 'bg-red-400 text-red-900']">

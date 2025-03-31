@@ -7,7 +7,7 @@ import axios from 'axios';
 const userNameUpdate = ref('')
 const router = useRouter()
 const alert = ref(false)
-const API_URL = 'https://vue-ecommerce-app-2lu4.onrender.com'
+const API_URL = 'https://vue-ecommerce-app-2lu4.onrender.com/'
 
 const selectFile = ref(null)
 const imagePreview = ref(null)
